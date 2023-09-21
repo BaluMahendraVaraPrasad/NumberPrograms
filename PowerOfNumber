@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class PowerOfNumber 
+{
+  public static void main(String[] args) 
+  {
+	Scanner scn=new Scanner(System.in);
+	System.out.println("Enter The Base");
+	int base=scn.nextInt();
+	System.out.println("Enter The Exp");
+	int exp=scn.nextInt();
+	int res=1;
+	for(int i=1;i<=exp;i++)
+	{
+		res=res*base;
+		System.out.println("i= "+i);
+		System.out.println("res= "+res);
+	}
+	System.out.println("The Output is " +res);
+}
+}
