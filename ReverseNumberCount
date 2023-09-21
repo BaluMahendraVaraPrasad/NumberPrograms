@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class ReverseCount 
+{
+ public static int reverse(int num)
+ {
+	 int rev=0;
+	 while(num>0)
+	 {
+		 int rem=num%10;
+		 rev=rev*10+rem;
+		 num/=10;
+	 }
+	 return rev;
+ }
+ public static int length(int num)
+ {
+	 int count=0;
+	 while(num>0)
+	 {
+		 count++;
+		 num/=10;
+	 }
+	 return count;
+ }
+ public static void main(String[] args)
+ {
+	Scanner scn=new Scanner(System.in);
+	System.out.println("Enter Number");
+	int num=scn.nextInt();
+	if (num<0) System.out.println("No Negatives");
+	else
+	{
+		int reverseNum=reverse(num);
+		while(reverseNum>0)
+		{
+			if(length(reverseNum)!=4)
+			{
+				reverseNum/=10;
+				continue;
+			}
+			else 
+			{
+				int sum=0;
+				while(reverseNum>0)
+				{
+					int rem=reverseNum%10;
+					sum=sum+rem;
+					reverseNum/=10;
+				}
+				System.out.println("The Sum IS "+sum);
+			}
+		}
+	}
+}
+}
