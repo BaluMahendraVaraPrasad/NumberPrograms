@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class StrongNumberRange {
+   public static int factorial(int num) {
+	   int fact=1;
+	   for(int i=1;i<=num;i++) {
+		   fact=fact*i;
+	   }
+	   return fact;
+   }
+   public static int factorialLogic(int num) {
+	   int res=0;
+	   while(num>0) {
+		   int rem=num%10;
+		   res=res+factorial(rem);
+		   num/=10;
+	   }
+	   return res;
+   }
+   public static void main(String[] args) {
+	Scanner scn=new Scanner(System.in);
+	System.out.println("enter number");
+	int range=scn.nextInt();
+	if(range<=1)System.out.println("invalid range");
+	else {
+		for(int i=1;i<=range;i++) {
+			if(i==factorialLogic(i))System.out.println(i);
+		}
+	}
+}
+}
