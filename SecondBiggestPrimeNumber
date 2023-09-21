@@ -1,0 +1,29 @@
+public class SecondBiggestPrime {
+
+	public static boolean isPrime(int num) {
+		int count=0;
+		for(int i=1;i<=num;i++) {
+			if(num%i==0)count++;
+		}
+		if(count!=2)return false;
+		return true;
+	}
+	public static void main(String[] args) {
+		int range=30;
+		int b1=0;
+		int b2=0;
+		for(int i=1;i<=range;i++) {
+			if(isPrime(i)) {
+				if(i==b1)continue;
+				else if(i>b1) {
+					b2=b1;
+					b1=i;
+				}
+				else if(i>b2 || b1==b2) {
+					b2=i;
+				}
+			}
+		}
+		System.out.println(b2);
+	}
+}
