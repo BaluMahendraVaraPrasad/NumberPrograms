@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class StrongNumber 
+{
+  public static int factorial(int num)
+  {
+	  int fact=1;
+	  for(int i=1;i<=num;i++)
+	  {
+		  fact=fact*i;
+	  }
+	  return fact;
+  }
+  public static void main(String[] args) 
+  {
+	Scanner scn=new Scanner(System.in);
+	System.out.println("Enter Number");
+	int num=scn.nextInt();
+	if (num<0) System.out.println("No Negatives");
+	else
+	{
+		int temp=num;
+		int res=0;
+		while(num>0)
+		{
+			int rem=num%10;
+			res=res+factorial(rem);
+			num/=10;
+		}
+		if (temp==res) System.out.println("Strong Number");
+		else System.out.println(" Not A Strong Number");
+	}
+}
+}
