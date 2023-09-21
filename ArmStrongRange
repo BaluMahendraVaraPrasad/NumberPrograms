@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class ArmstrongRange {
+   public static int length(int num) {
+	   int count=0;
+	   while(num>0) {
+		   count++;
+		   num/=10;
+	   }
+	   return count;
+   }
+   public static int power(int base,int exp) {
+	   int res=1;
+	   for(int i=1;i<=exp;i++) {
+		   res=res*base;
+	   }
+	   return res;
+   }
+   public static int armstrongLogic(int num) {
+	   int lenNum=length(num);
+	   int res=0;
+	   while(num>0) {
+		   int rem=num%10;
+		   res=res+power(rem,lenNum);
+		   num/=10;
+	   }
+	   return res;
+   }
+   public static void main(String[] args) {
+	Scanner scn=new Scanner(System.in);
+	System.out.println("Range of armstrong number");
+	System.out.println("Enter range");
+	int range=scn.nextInt();
+	if(range<=1)System.out.println("Invalid range");
+	else {
+		for(int i=1;i<=range;i++) {
+			if(i==armstrongLogic(i))System.out.println(i);
+		}
+	}
+}
+}
