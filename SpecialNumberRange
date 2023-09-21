@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class SpecialNumber {
+	 public static void main(String[] args) {
+			Scanner scn=new Scanner(System.in);
+			System.out.println("Enter number");
+			int range=scn.nextInt();
+			for(int i=1;i<=range;i++) {
+				if(special(i)) {
+					System.out.println(i);
+				}
+			}
+			scn.close();
+		}
+	 public static boolean special(int num) {
+		 int sum=0;
+		 int prod=1;
+		 int temp=num;
+		 
+		 while(num>0) {
+			 int rem=num%10;
+			 sum=sum+rem;
+			 prod=prod*rem;
+			 num/=10;
+		 }
+		 if(sum+prod==temp)return true;
+		 return false;
+		 
+	 }
+}
