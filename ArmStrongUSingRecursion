@@ -1,0 +1,15 @@
+public class ArmStrongRec {
+   public static void main(String[] args) {
+	   int n=154;
+	   if(n==isArmstrong(n, count(n)))System.out.println("Armstrong");
+	    System.out.println("Not Armstrong");
+}
+   public static int count(int n) {
+	   if(n==0)return 0;
+	   return 1+count(n/10);
+   }
+   public static int isArmstrong(int n,int pow) {
+	   if(n==0)return 0;
+	   return (int)Math.pow(n%10, pow)+isArmstrong(n/10, pow);
+   }
+}
