@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class SumOfNumbers {
+	public static void main(String[] args) {
+		Scanner scn=new Scanner(System.in);
+		System.out.println("Enter number");
+		int i=scn.nextInt();
+		System.out.println(sum(i));
+	}
+    public static int sum(int i) {
+    	if(i==0)return 0;
+    	int a=i%10+sum(i/10);
+    	if(a>9)return sum(a);
+    	return a;
+    }
+}
