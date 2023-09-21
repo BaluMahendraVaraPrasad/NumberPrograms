@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class ArmstrongNumber 
+{
+  public static int length(int num)
+  {
+	 int count=0;
+	 while(num>0) {
+		 count++;
+		 num/=10;
+	 }
+	 return count;
+  }
+  public static int power(int base,int exp) {
+	   int res=1;
+	   for(int i=1;i<=exp;i++) {
+		   res=res*base;
+	   }
+	   return res;
+	   }
+	   
+  
+  public static void main(String[] args) 
+  {
+	Scanner scn=new Scanner(System.in);
+	System.out.println("Enter the input");
+	int num=scn.nextInt();
+	int lenNum=length(num);
+	int temp=num;
+	if(num<0) System.out.println("No Negatives");
+	else
+	{
+		int res=0;
+		while(num>0)
+		{
+			int rem=num%10;
+			res=res+power(rem, lenNum);
+			num/=10;
+		}
+		if(temp==res) System.out.println(temp+ " Is An Armstrong Number");
+		else System.out.println(temp+ " Is Not An Armstrong Number");
+	}
+  }
+}
