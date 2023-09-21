@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class FibonacciRange {
+   public static void main(String[] args) {
+	Scanner scn=new Scanner(System.in);
+	System.out.println("Enter Number");
+	int m=scn.nextInt();
+	int n=scn.nextInt();
+	int a=0,b=1,c;
+	if(m==0)System.out.println(a+" "+b);
+	for(;true;) {
+		c=a+b;
+		if(c>n)break;
+		if(c>=m) {
+			System.out.println(""+c);
+			a=b;
+			b=c;
+		}
+	}
+}
+}
